@@ -27,7 +27,7 @@
 
 			import * as THREE from 'three';
 			import { ARButton } from 'three/addons/webxr/ARButton.js';
-      import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+      import { FBXLoader } from 'three/addons/loaders/FBXLoader.js'
 
 			let container;
 			let camera, scene, renderer;
@@ -63,7 +63,7 @@
 				container.appendChild( renderer.domElement );
         let gltfModel
 				//
-        const loader = new GLTFLoader()
+        const loader = new FBXLoader()
         loader.load("public/drone.fbx", (model) => {
 
           gltfModel = model
