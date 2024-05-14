@@ -66,7 +66,7 @@
         const loader = new GLTFLoader()
         loader.load("public/pool_table.glb", (model) => {
 
-          gltfModel = model
+          gltfModel = model.scene
         })
 
 				document.body.appendChild( ARButton.createButton( renderer, { requiredFeatures: [ 'hit-test' ] } ) );
@@ -81,8 +81,8 @@
 
 						const material = new THREE.MeshPhongMaterial( { color: 0xffffff * Math.random() } );
 						//const mesh = new THREE.Mesh( geometry, material );
-            const mesh = gltfModel.scene.clone()
-            mesh.scale.set(0.2, 0.2, 0.2)
+            const mesh = gltfModel.clone()
+            //mesh.scale.set(0.2, 0.2, 0.2)
 						reticle.matrix.decompose( mesh.position, mesh.quaternion, mesh.scale );
 						//mesh.scale.y = Math.random() * 2 + 1;
 						scene.add( mesh );
