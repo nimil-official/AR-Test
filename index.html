@@ -49,7 +49,10 @@
           (x) => x.description === "scene"
           )
         ];
-        let object = scene.getObjectByName("ceiling_light_low_light_mat_0")
+        let object = scene.getObjectByName("pooltable_low_pool_table_mat_0")
+        let object2 = scene.getObjectByName("ceiling_light_low_light_mat_0")
+        object2.material.color.r = object2.material.color.g = 0
+        object2.material.needsUpdate = true
         console.log("object is ", object)
         object.visible = false
         //object.visible ? object.scale.set(1, 1, 1) : object.scale.set(0, 0, 0);
