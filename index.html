@@ -17,8 +17,8 @@
     <model-viewer
       
       id = "pool-table"
-      src = "./public/pool_table_traditional (1).glb"
-      src = "./public/Pool_Table_Traditional.usdz"
+      src = "./public/pool_table_traditional.glb"
+
       
       ar
       ar-scale = fixed
@@ -49,13 +49,11 @@
           (x) => x.description === "scene"
           )
         ];
-        let object = scene.getObjectByName("pooltable_low_pool_table_mat_0")
-        let object2 = scene.getObjectByName("ceiling_light_low_light_mat_0")
-        object2.material.color.g = object2.material.color.b = 0
-        object2.material.needsUpdate = true
+        //let object = scene.getObjectByName("pooltable_low_pool_table_mat_0")
+        let object = scene.getObjectByName("ceiling_light_low_light_mat_0")
         console.log("object is ", object)
         object.visible = false
-        //object.visible ? object.scale.set(1, 1, 1) : object.scale.set(0, 0, 0);
+        object.visible ? object.scale.set(1, 1, 1) : object.scale.set(0, 0, 0);
       });
 
     </script>
