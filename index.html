@@ -14,26 +14,30 @@
       ar
       ar-scale = fixed
     >
-
-    </model-viewer>
-
-    <script>
+    <script type = "module">
       const modelViewerTransform = document.querySelector("model-viewer#pool-table");
       console.log("model viewer is ", modelViewerTransform)
       modelViewerTransform.addEventListener('load', () => {
         const names = modelViewerTransform.availableVariants;
         console.log("names are ", names)
         const ball = modelViewerTransform.model.getMaterialByName('balls')
+        ball.setAlphaMode("BLEND")
         console.log("ball", ball)
         const pbr = ball.pbrMetallicRoughness;
         const baseColor = pbr.baseColorFactor;
-        baseColor[3] = alpha;
-        pbr.setBaseColorFactor(baseColor);
+        baseColor[3] = 0;
+        ball.pbrMetallicRoughness.setBaseColorFactor(baseColor);
         console.log("ball", ball.pbrMetallicRoughness.baseColorFactor[3])
+
+        const table = modelViewerTransform.model.getMaterialByName("material")
+        table.pbrMetallicRoughness.setBaseColorFactor("#ff00ff")
         // Adds a default option
       });
 
     </script>
+    </model-viewer>
+
+    
   </body>
 </html>
 
