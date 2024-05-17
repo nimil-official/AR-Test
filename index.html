@@ -25,6 +25,8 @@
     >
     <script type = "module">
       const modelViewerTransform = document.querySelector("model-viewer#pool-table");
+      const modelViewer = document.querySelector("model-viewer")
+      modelViewer.minimumRenderScale = 1
       console.log("model viewer is ", modelViewerTransform)
       modelViewerTransform.addEventListener('load', () => {
         // const names = modelViewerTransform.availableVariants;
