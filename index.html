@@ -20,8 +20,8 @@
       modelViewerTransform.addEventListener('load', () => {
         const names = modelViewerTransform.availableVariants;
         console.log("names are ", names)
-        const ball = modelViewerTransform.model.getMaterialByName('balls')
-        ball.setAlphaMode("BLEND")
+        const ball = modelViewerTransform.model.getMaterialByName('material')
+        ball.setAlphaMode("MASK")
         console.log("ball", ball)
         const pbr = ball.pbrMetallicRoughness;
         const baseColor = pbr.baseColorFactor;
@@ -29,8 +29,8 @@
         ball.pbrMetallicRoughness.setBaseColorFactor(baseColor);
         console.log("ball", ball.pbrMetallicRoughness.baseColorFactor[3])
 
-        const table = modelViewerTransform.model.getMaterialByName("material")
-        table.pbrMetallicRoughness.setBaseColorFactor("#ff00ff")
+        // const table = modelViewerTransform.model.getMaterialByName("material")
+        // table.pbrMetallicRoughness.setBaseColorFactor("#ff00ff")
         // Adds a default option
       });
 
