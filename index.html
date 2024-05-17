@@ -11,6 +11,7 @@
     <model-viewer
       id = "pool-table"
       src = "./public/pool_table_traditional (1).glb"
+      src = "./public/Pool_Table_Traditional.usdz"
       
       ar
       ar-scale = fixed
@@ -23,6 +24,8 @@
         console.log("names are ", names)
         const ball = modelViewerTransform.model.getMaterialByName('light_mat')
         ball.setAlphaMode("MASK")
+        ball.setAlphaCutoff(0.01);
+
         console.log("ball", ball)
         const pbr = ball.pbrMetallicRoughness;
         const baseColor = pbr.baseColorFactor;
